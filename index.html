@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+    
+    <header id="leader-head">
+        <div id="leader-board">
+            <div class="game-title">
+                <p>ROCK</p>
+                <P>PAPER</P>
+                <P>SCISSORS</P>
+            </div>
+            <div class="score-section">
+                <div class="score-card">
+                    <p class="score-card-text">COMPUTER</p>
+                    <p class="score-card-text">SCORE</p>
+                    <p class="scores" id="comp-score">0</p>
+                </div>
+                <div class="score-card">
+                    <p class="score-card-text">YOUR</p>
+                    <p class="score-card-text">SCORE</p>
+                    <p class="scores" id="user-score">0</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-section">
+        <section id="start-game">
+            <div class="center-area">
+                    <button id="rock" class="rock-comp r-p-s-comp" onclick="startGame(this.id)">
+                        <img src="./assets/rock.png" alt="rock-img">
+                    </button>
+                    <div class="horizontal-line"></div>
+                    <button id="scissors" class="scissors-comp r-p-s-comp" onclick="startGame(this.id)">
+                        <img src="./assets/scissors.png" alt="scissors-img">
+                    </button>
+                    <div class="connecting-line-1"></div>
+                    <div class="connecting-line-2"></div>
+                    <button id="paper" class="paper-comp r-p-s-comp" onclick="startGame(this.id)">
+                        <img src="./assets/paper.png" alt="paper-img">
+                    </button>
+            </div>
+        </section>
+
+        <section id="game-result">
+            <div class="result-container">
+                <div class="result-item selection">
+                    <p>YOU PICKED</p>
+                    <button id="user" class="r-p-s-comp">
+                        <img src="" alt="user-selected">
+                    </button>
+                </div>
+                <div class="result-item declaration">
+                    <h1>CONCLUSION</h1>
+                    <p>AGAINST PC</p>
+                    <button class="replay" onclick="replay()">PLAY AGAIN</button>
+                </div>
+                <div class="result-item selection">
+                    <p>PC PICKED</p>
+                    <button id="pc" class="r-p-s-comp">
+                        <img src="" alt="pc-selected">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        
+    
+
+        <section id="rules-section">
+            <button onclick="showRules()">X</button>
+            <div id="rules">
+                <h2>Game Rules</h2>
+                <ul>
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you'll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                    <li>If both players lay down the same hand, each player lays down another hand</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+
+    <section id="hurray">
+        <div class="hurray-container">
+              <div class="pictures">
+                <img src="./assets/stars.png" alt="stars">
+                <img src="./assets/cup.png" alt="cup">
+              </div>  
+              <p class="main-text">HURRAY!!</p>
+              <p class="sub-text" >YOU WON THE GAME</p>
+              <button class="replay" onclick="replay()">PLAY AGAIN</button>
+        </div>
+    </section>
+    <footer>
+        <div id="button-section">
+            <button id="next-button" onclick="hurrayPage()">NEXT</button>
+            <button onclick="showRules()">RULES</button>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
