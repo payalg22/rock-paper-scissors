@@ -4,7 +4,6 @@ var pcScore = 0;
 var userScore = 0;
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  console.log("DOM fully loaded and parsed");
   if (localStorage.rpsPcScore) {
     pcScore = localStorage.getItem("rpsPcScore");
     userScore = localStorage.getItem("rpsUserScore");
@@ -54,34 +53,24 @@ function startGame(userSelection) {
   let resultHead = "";
   let winner = "";
 
-  console.log("User selected: ", userSelection);
-  console.log("Computer selected: ", compSelection);
-
   if (userSelection === compSelection) {
-    console.log("IT'S A TIE");
     winner = "tie";
   } else if (userSelection === "rock") {
     if (compSelection === "paper") {
-      console.log("COMPUTER WINS");
       winner = "pc";
     } else {
-      console.log("USER WINS");
       winner = "user";
     }
   } else if (userSelection === "paper") {
     if (compSelection === "scissors") {
-      console.log("COMPUTER WINS");
       winner = "pc";
     } else {
-      console.log("USER WINS");
       winner = "user";
     }
   } else if (userSelection === "scissors") {
     if (compSelection === "rock") {
-      console.log("COMPUTER WINS");
       winner = "pc";
     } else {
-      console.log("USER WINS");
       winner = "user";
     }
   }
@@ -96,7 +85,7 @@ function startGame(userSelection) {
     "#pc img"
   ).style.content = `url(./assets/${compSelection}.png)`;
   pc.classList.add(`${compSelection}-comp`);
-
+  
   if (winner === "tie") {
     resultHead = "TIE UP";
     document.querySelector(".declaration p").style.display = "none";
@@ -112,6 +101,7 @@ function startGame(userSelection) {
     userScore++;
   }
 
+  //Updating local storage scores
   localStorage.rpsPcScore = pcScore;
   localStorage.rpsUserScore = userScore;
 
